@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multicontainer-pod
+  labels:
+    app: multicon-pod
+spec:
+  containers:
+    - image: nginx:latest
+      name: nginx-container
+      ports:
+        -  containerPort: 80
+    - image: redis:latest
+      name: redis-container
+      ports:
+        -  containerPort: 6379
